@@ -62,7 +62,7 @@ $potongan = ($Diskon / 100) * $totalBelanja;
 
 $TotalBayar = $totalBelanja - $potongan;
 
-echo "==== Rincian Pajak ====<br>";
+echo "==== Total Pembelanjaan ====<br>";
 echo "Total Belanja : Rp " .$totalBelanja. "<br>";
 echo "Jenis  : " .$member[0]. "<br>";
 echo "diskon : " .$Diskon. "%<br>";
