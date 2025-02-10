@@ -3,7 +3,7 @@ $total = 100000;
 
 echo"total belanja anda $total <br>";
 
-// ===============JIKA HANYA ADA SATU KONDISI====================
+// =============== JIKA HANYA ADA SATU KONDISI ====================
 if ($total >= 100000) {
     echo "anjng lu dapet diskon tai hoki bego Rp. 1000";
 } else {

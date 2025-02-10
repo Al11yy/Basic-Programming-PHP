@@ -2,7 +2,7 @@
 
 $gaji = 8000000;
 $pajak = 0; 
-$status = "tetap";
+$status = "pns";
 
 if ($gaji >= 15000000) {
     $pajak = 20;
