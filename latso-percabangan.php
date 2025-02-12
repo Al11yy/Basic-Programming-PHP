@@ -2,7 +2,7 @@
 
 $gaji = 8000000;
 $pajak = 0; 
-$status = "pns";
+$status = "tetap";
 
 if ($gaji >= 15000000) {
     $pajak = 20;
@@ -42,29 +42,46 @@ echo "Gaji bersih: Rp " .$gajiBersih. "<br>";
 
 echo   "<br> <br> <br> <br> <br> <br>" ;
 
-
-$member = ["gold", "silv", "non"];
-$Diskon= 0;
+$member = "Non-member"; //-Jenis Member nya : 'gold', 'silv', 'Non-Member'.
+$Diskon = 0;
 $totalBelanja = 1200000;
 
+// =Logic nya============
 if ($member == "gold") {
-
-} else if ($totalBelanja >= 1500000) {
-    $Diskon=20;
-} else if ($totalBelanja >= 1000000 && $totalBelanja <= 1499000) {
-    $Diskon= 15;
-}   else if ($totalBelanja <= 1000000) {
-    $Diskon= 10;
+    if ($totalBelanja >= 1500000) {
+        $Diskon = 20;
+    } else if ($totalBelanja >= 1000000 && $totalBelanja <= 1499000) {
+        $Diskon = 15;
+    } else if ($totalBelanja < 1000000) {
+        $Diskon = 10;
+    }} 
+    
+    else if ($member == "silv") {
+    if ($totalBelanja >= 1500000) {
+        $Diskon = 15;
+    } else if ($totalBelanja >= 1000000 && $totalBelanja <= 1500000) {
+        $Diskon = 10;
+    } else if ($totalBelanja < 1000000) {
+        $Diskon = 5;
+    }} 
+    else if ($member == "Non-Member") {
+    if ($totalBelanja >= 1500000) {
+        $Diskon = 10;
+    } else if ($totalBelanja >= 1000000 && $totalBelanja <= 1500000) {
+        $Diskon = 5;
+    } else if ($totalBelanja <= 1000000) {
+        $Diskon = 0;
+    }
 }
 
-//potongan diskon
+// rumus=======
 $potongan = ($Diskon / 100) * $totalBelanja;
+$totalBayar = $totalBelanja - $potongan;
 
-$TotalBayar = $totalBelanja - $potongan;
-
+// hasil======
 echo "==== Total Pembelanjaan ====<br>";
-echo "Total Belanja : Rp " .$totalBelanja. "<br>";
-echo "Jenis  : " .$member[0]. "<br>";
-echo "diskon : " .$Diskon. "%<br>";
-echo "Potongan : Rp ".$potongan. "<br>";
-echo "Total belanja : Rp".$TotalBayar."<br>";
+echo "Total Belanja : Rp " . $totalBelanja . "<br>";
+echo "Jenis Member : " . $member . "<br>";
+echo "Diskon : " . $Diskon . "%<br>";
+echo "Potongan : Rp " . $potongan. "<br>";
+echo "Total Bayar : Rp " . $totalBayar. "<br>";
